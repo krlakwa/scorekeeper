@@ -6,7 +6,7 @@ const AddPlayer = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
     props.onPlayerAdd(input.value);
-    input.value = '';
+    input.value = ''; 
   }
 
   return (
