@@ -33,3 +33,11 @@ it('should add new player when onPlayerAdd is called', () => {
   expect(players[2].name).toEqual('Ania');
   expect(players[2].score).toEqual(0);
 });
+
+it('should remove player when onPlayerRemove is called', () => {
+  const appComponent = shallow(<App />);
+  const onPlayerRemove = appComponent.find(PlayersList).prop('onPlayerRemove');
+  onPlayerRemove(0);
+  const players = appComponent.state('players');
+  expect(players.length).toEqual(1);
+});
